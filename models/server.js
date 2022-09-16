@@ -9,7 +9,7 @@ class Server{
         this.path = '/api';
         this.pathLogin = '/api/login';
         this.pathUser = '/api/user';
-
+        this.pathDocument = '/api/document'
         this.middelwares();
         this.routes();
 
@@ -27,6 +27,7 @@ class Server{
     routes(){
        this.app.use(this.pathLogin,require('../routes/login'));
         this.app.use(this.pathUser,require('../routes/users'));
+        this.app.use(this.pathDocument,require('../routes/document'));
     }
 
     Listen(){
